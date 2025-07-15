@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جزوه موازنه - دنیای شیمی</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Vazirmatn for Persian text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Applying the Persian font to the entire page */
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+        }
+
+        /* --- SVG Background Animation --- */
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .out-top { animation: rotate 40s linear infinite; transform-origin: 13px 25px; }
+        .in-top { animation: rotate 25s linear infinite; transform-origin: 13px 25px; }
+        .out-bottom { animation: rotate 50s linear infinite; transform-origin: 84px 93px; }
+        .in-bottom { animation: rotate 30s linear infinite; transform-origin: 84px 93px; }
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+        }
+        /* Custom styles for the lesson content */
+        .lesson-content h2 {
+            font-size: 1.75rem; /* 28px */
+            font-weight: 800;
+            color: #0e7490; /* cyan-700 */
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #06b6d4; /* cyan-500 */
+        }
+        .lesson-content h3 {
+            font-size: 1.25rem; /* 20px */
+            font-weight: 700;
+            color: #155e75; /* cyan-800 */
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .lesson-content p, .lesson-content li {
+            font-size: 1rem; /* 16px */
+            line-height: 1.8;
+            color: #334155; /* slate-700 */
+        }
+        .lesson-content code {
+            font-family: 'Vazirmatn', monospace;
+            background-color: #f1f5f9; /* slate-100 */
+            color: #1e293b; /* slate-800 */
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.375rem;
+            direction: ltr;
+            display: inline-block;
+        }
+        .lesson-content blockquote {
+            border-right: 4px solid #06b6d4; /* cyan-500 */
+            padding-right: 1rem;
+            margin: 1rem 0;
+            font-style: italic;
+            color: #1e293b; /* slate-800 */
+            background-color: #ecfeff; /* cyan-50 */
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 0 8px 8px 0;
+        }
+        .lesson-content ol, .lesson-content ul {
+            padding-right: 2rem;
+            margin-top: 1rem;
+        }
+        .lesson-content li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+
+    <!-- Animated SVG Background -->
+    <svg class="animated-bg" preserveAspectRatio="xMidYMid slice" viewBox="10 10 80 80">
+        <path fill="#06b6d4" class="out-top" d="M37-5C25.1-14.7,5.7-19.1-9.2-10-28.5,1.8-32.7,31.1-19.8,49c15.5,21.5,52.6,22,67.2,2.3C59.4,35,53.7,8.5,37-5Z"/>
+        <path fill="#67e8f9" class="in-top" d="M20.6,4.1C11.6,1.5-1.9,2.5-8,11.2-16.3,23.1-8.2,45.6,7.4,50S42.1,38.9,41,24.5C40.2,14.1,29.4,6.6,20.6,4.1Z"/>
+        <path fill="#38bdf8" class="out-bottom" d="M105.9,48.6c-12.4-8.2-29.3-4.8-39.4.8-23.4,12.8-37.7,51.9-19.1,74.1s63.9,15.3,76-5.6c7.6-13.3,1.8-31.1-2.3-43.8C117.6,63.3,114.7,54.3,105.9,48.6Z"/>
+        <path fill="#cffafe" class="in-bottom" d="M102,67.1c-9.6-6.1-22-3.1-29.5,2-15.4,10.7-19.6,37.5-7.6,47.8s35.9,3.9,44.5-12.5C115.5,92.6,113.9,74.6,102,67.1Z"/>
+    </svg>
+
+    <!-- Back Button to the topics page -->
+    <a href="menu.html" onclick="history.back()" class="fixed top-6 left-6 z-50 bg-white/80 backdrop-blur-sm text-cyan-800 p-3 rounded-full shadow-lg hover:bg-white transition-all duration-300 transform hover:scale-110">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l-7 7 7 7" />
+        </svg>
+    </a>
+
+    <!-- Main Content -->
+    <main class="min-h-screen flex items-center justify-center p-4 sm:p-6 md:p-8">
+        <div class="w-full max-w-4xl bg-white/70 backdrop-blur-xl rounded-2xl shadow-2xl p-6 sm:p-10 my-16 text-right">
+            
+            <h1 class="text-3xl md:text-4xl font-extrabold text-slate-800 mb-4 text-center">جزوه کامل و جامع موازنه شیمی به زبان ساده</h1>
+            <p class="text-center text-slate-600 mb-8">سلام مجدد! بیا یک بار برای همیشه پرونده این مبحث موازنه رو ببندیم. این جزوه کامل‌ترین چیزیه که برای فهمیدن عمیق و راحت موازنه نیاز داری.</p>
+            
+            <div class="lesson-content">
+                <h2>بخش اول: اصلاً فلسفه موازنه چیه؟</h2>
+                <p>توی دنیای شیمی، یک قانون اساسی و مهم داریم به اسم قانون پایستگی جرم و اتم. این قانون خیلی ساده میگه:</p>
+                <blockquote>در یک واکنش شیمیایی، اتم‌ها نه خلق میشن و نه از بین میرن؛ فقط بازآرایی میشن و مدل اتصالشون به هم عوض میشه.</blockquote>
+                <p>فکر کن داری با لگو بازی می‌کنی. تو ۱۰ تا قطعه قرمز، ۵ تا آبی و ۸ تا زرد داری. باهاشون یک ماشین و یک خونه می‌سازی. بعد خرابشون می‌کنی و با همون قطعه‌ها یک ربات می‌سازی. درسته که شکل ساخته‌هات عوض شده، ولی در آخر تو هنوز همون ۱۰ تا قطعه قرمز، ۵ تا آبی و ۸ تا زرد رو داری. هیچی کم و زیاد نشده! داستان اتم‌ها در واکنش شیمیایی هم دقیقاً همینه.</p>
+                <p>این یعنی چی؟ یعنی تعداد و نوع اتم‌های هر عنصر قبل از واکنش (در واکنش‌دهنده‌ها) باید دقیقاً با تعداد و نوع اتم‌های همون عنصر بعد از واکنش (در فرآورده‌ها) برابر باشه. یک معادله شیمیایی موازنه شده، در واقع مثل یک دستور پخت دقیق آشپزیه که نسبت صحیح مواد اولیه رو به ما میگه.</p>
+                <h3>مثال: واکنش معروف تولید آب</h3>
+                <p>قبل از موازنه: <code>H₂ + O₂ ⟶ H₂O</code></p>
+                <p>سمت چپ ۲ تا هیدروژن و ۲ تا اکسیژن داریم. سمت راست ۲ تا هیدروژن و فقط ۱ اکسیژن. خب اون یکی اکسیژن کجا رفته؟ هیچ‌جا! معادله ما غلطه و باید درستش کنیم.</p>
+                <p>بعد از موازنه: <code>2H₂ + O₂ ⟶ 2H₂O</code></p>
+                <p>شمارش نهایی: حالا سمت چپ ۴ تا هیدروژن و ۲ تا اکسیژن داریم و سمت راست هم ۴ تا هیدروژن و ۲ تا اکسیژن. آفرین! حالا قانون پایستگی رعایت شده.</p>
+                <p>پس موازنه یعنی پیدا کردن اون عددهای گنده (ضرایب) که پشت فرمول‌ها میذاریم تا تعداد اتم‌ها در دو طرف معادله یکسان بشه.</p>
+
+                <h2>بخش دوم: روش‌های موازنه کردن</h2>
+                <p>برای این کار چند تا روش وجود داره که یکی‌یکی با هم یاد می‌گیریم.</p>
+                
+                <h3>روش اول: روش وارسی (آزمایش و خطا)</h3>
+                <p>این همون روش معروف "پیدا کردن تپل‌ترین ماده" است که رایج‌ترین و سریع‌ترین روش برای واکنش‌های معمولیه.</p>
+                <strong>مراحل گام به گام:</strong>
+                <ol class="list-decimal">
+                    <li><strong>پیدا کردن پیچیده‌ترین ترکیب:</strong> به ترکیبی که بیشترین تعداد اتم و بیشترین تنوع عناصر رو داره (تپل‌ترین!)، ضریب ۱ بده.</li>
+                    <li><strong>شروع موازنه:</strong> از همین ترکیب شروع کن و تعداد اتم‌های عناصرش رو در دو طرف معادله برابر کن. این کار رو با گذاشتن ضریب برای مواد دیگه انجام بده.</li>
+                    <li><strong>ادامه دادن با بقیه عناصر:</strong> سراغ عنصرهای باقی‌مونده برو و اون‌ها رو هم موازنه کن.</li>
+                    <li><strong>چک کردن نهایی:</strong> وقتی فکر کردی تموم شده، یک بار دیگه تعداد تمام اتم‌ها رو در دو طرف بشمار تا مطمئن بشی همه چیز برابره.</li>
+                    <li><strong>حذف کسرها:</strong> اگر در حین کار به ضریب کسری رسیدی (مثلاً <code>7/2</code>)، کل معادله رو در مخرج اون کسر (یعنی ۲) ضرب کن تا همه ضریب‌ها عدد صحیح بشن.</li>
+                </ol>
+                <strong>نکات کلیدی برای این روش:</strong>
+                <ul class="list-disc">
+                    <li>معمولاً بهتره عناصری که در چند ترکیب تکرار شدن (مثل اکسیژن و هیدروژن در واکنش‌های سوختن) رو برای آخر کار نگه داری.</li>
+                    <li><strong>ترفند یون چنداتمی:</strong> اگر یک یون چنداتمی (مثل <code>SO₄</code> یا <code>NO₃</code>) هم در سمت چپ و هم در سمت راست بدون تغییر وجود داره، اون رو به عنوان یک واحد در نظر بگیر و موازنه کن. لازم نیست به اکسیژن و گوگردش جداگانه فکر کنی. این کار سرعتت رو خیلی بالا میبره.</li>
+                </ul>
+                <h3>مثال آموزشی: موازنه سوختن اتانول (C₂H₅OH)</h3>
+                <p><code>C₂H₅OH + O₂ ⟶ CO₂ + H₂O</code></p>
+                <ol class="list-decimal">
+                    <li>تپل‌ترین ماده <code>C₂H₅OH</code> هست. بهش ضریب ۱ میدیم.</li>
+                    <li><strong>موازنه کربن (C):</strong> در سمت چپ ۲ تا کربن داریم. پس به <code>CO₂</code> ضریب ۲ میدیم.</li>
+                    <li><strong>موازنه هیدروژن (H):</strong> در سمت چپ ۶ تا هیدروژن داریم (۵ تا در <code>H₅</code> و ۱ دونه در <code>OH</code>). پس به <code>H₂O</code> ضریب ۳ میدیم تا 3×2=6 تا هیدروژن داشته باشیم.</li>
+                    <li><strong>موازنه اکسیژن (O):</strong> حالا نوبت اکسیژنه. تعداد اکسیژن‌های سمت راست رو می‌شماریم: در <code>2CO₂</code> (2×2=4 تا) و در <code>3H₂O</code> (3×1=3 تا). مجموعاً ۷ تا اکسیژن در سمت راست داریم. در سمت چپ، ۱ اکسیژن در خود <code>C₂H₅OH</code> داریم. پس به 7−1=6 تا اکسیژن دیگه نیاز داریم. برای تأمین ۶ تا اکسیژن، به <code>O₂</code> ضریب ۳ میدیم (3×2=6).</li>
+                </ol>
+                <p>معادله نهایی: <code>C₂H₅OH + 3O₂ ⟶ 2CO₂ + 3H₂O</code></p>
+
+                <h3>روش دوم: روش جبری (معادله ریاضی)</h3>
+                <p>این روش خیلی شیک و ریاضی‌وار هست و برای واکنش‌های پیچیده که با روش وارسی گیج میشی، عالیه. این روش شاید کندتر باشه ولی تضمینی است و همیشه به جواب درست می‌رسه. در این روش ما برای ضریب‌ها متغیر (مثل a, b, c, d) در نظر می‌گیریم و یک دستگاه معادله حل می‌کنیم.</p>
+                <strong>مراحل گام به گام:</strong>
+                <ol class="list-decimal">
+                    <li><strong>گذاشتن متغیر:</strong> به جای ضریب‌های خالی، برای هر ماده یک متغیر بذار (مثلاً a, b, c, d, ...).</li>
+                    <li><strong>نوشتن معادله برای هر عنصر:</strong> برای هر عنصر، یک معادله بر اساس قانون پایستگی اتم بنویس. یعنی (تعداد اتم در سمت چپ) = (تعداد اتم در سمت راست). حواست باشه زیروندها رو در متغیرها ضرب کنی.</li>
+                    <li><strong>حل دستگاه معادلات:</strong> حالا یک دستگاه معادله داری. برای حل کردنش، یکی از متغیرها رو (معمولاً اونی که جلوی پیچیده‌ترین ماده است) برابر ۱ فرض کن و بقیه متغیرها رو بر اساس اون به دست بیار.</li>
+                    <li><strong>حذف کسرها:</strong> اگر جواب‌ها کسری شد، همه متغیرها رو در کوچکترین مضرب مشترک مخرج‌ها ضرب کن تا همه ضریب‌ها صحیح و ساده بشن.</li>
+                </ol>
+                <h3>مثال آموزشی: موازنه واکنش زیر با روش جبری</h3>
+                <p><code>KClO₃ + NaI + HCl ⟶ KCl + I₂ + NaCl + H₂O</code></p>
+                <ol class="list-decimal">
+                    <li><strong>گذاشتن متغیر:</strong> <code>aKClO₃ + bNaI + cHCl ⟶ dKCl + eI₂ + fNaCl + gH₂O</code></li>
+                    <li><strong>نوشتن معادله برای هر عنصر:</strong>
+                        <ul class="list-disc pr-4">
+                            <li>پتاسیم (K): a = d</li>
+                            <li>کلر (Cl): a + c = d + f</li>
+                            <li>اکسیژن (O): 3a = g</li>
+                            <li>سدیم (Na): b = f</li>
+                            <li>ید (I): b = 2e</li>
+                            <li>هیدروژن (H): c = 2g</li>
+                        </ul>
+                    </li>
+                    <li><strong>حل دستگاه:</strong> بیا فرض کنیم a = 1.
+                        <ul class="list-disc pr-4">
+                            <li>اگر a=1 ⟹ d=1.</li>
+                            <li>اگر a=1 ⟹ g=3×1=3.</li>
+                            <li>حالا که g=3 ⟹ c=2×3=6.</li>
+                            <li>معادله کلر رو دوباره نگاه کن: a+c=d+f ⟹ 1+6=1+f ⟹ f=6.</li>
+                            <li>حالا که f=6 ⟹ b=6.</li>
+                            <li>و در آخر، b=2e ⟹ 6=2e ⟹ e=3.</li>
+                        </ul>
+                    </li>
+                    <li><strong>جواب‌ها:</strong> a=1, b=6, c=6, d=1, e=3, f=6, g=3. خوشبختانه هیچ کسری هم نداریم!</li>
+                </ol>
+                <p>معادله نهایی: <code>KClO₃ + 6NaI + 6HCl ⟶ KCl + 3I₂ + 6NaCl + 3H₂O</code></p>
+                <p class="mt-6">این روش شاید اولش طولانی به نظر بیاد، ولی چون قانون شیمی رو به زبان قطعی ریاضی تبدیل می‌کنه، هیچوقت اشتباه نمی‌کنه و برای واکنش‌های خیلی سخت، بهترین دوسته شماست.</p>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

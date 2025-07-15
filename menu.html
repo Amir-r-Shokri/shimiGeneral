@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>انتخاب مبحث - دنیای شیمی</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Vazirmatn for Persian text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Applying the Persian font to the entire page */
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+        }
+
+        /* --- SVG Background Animation --- */
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .out-top { animation: rotate 40s linear infinite; transform-origin: 13px 25px; }
+        .in-top { animation: rotate 25s linear infinite; transform-origin: 13px 25px; }
+        .out-bottom { animation: rotate 50s linear infinite; transform-origin: 84px 93px; }
+        .in-bottom { animation: rotate 30s linear infinite; transform-origin: 84px 93px; }
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+        }
+
+        /* --- Flipping Card Styles --- */
+        .flip-card {
+            perspective: 1000px;
+            transition: transform 0.2s ease-in-out;
+        }
+        .flip-card:hover {
+            transform: scale(1.05);
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            /* Smoother transition with cubic-bezier */
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform-style: preserve-3d;
+        }
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1rem;
+        }
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+
+    <!-- Animated SVG Background -->
+    <svg class="animated-bg" preserveAspectRatio="xMidYMid slice" viewBox="10 10 80 80">
+        <path fill="#06b6d4" class="out-top" d="M37-5C25.1-14.7,5.7-19.1-9.2-10-28.5,1.8-32.7,31.1-19.8,49c15.5,21.5,52.6,22,67.2,2.3C59.4,35,53.7,8.5,37-5Z"/>
+        <path fill="#67e8f9" class="in-top" d="M20.6,4.1C11.6,1.5-1.9,2.5-8,11.2-16.3,23.1-8.2,45.6,7.4,50S42.1,38.9,41,24.5C40.2,14.1,29.4,6.6,20.6,4.1Z"/>
+        <path fill="#38bdf8" class="out-bottom" d="M105.9,48.6c-12.4-8.2-29.3-4.8-39.4.8-23.4,12.8-37.7,51.9-19.1,74.1s63.9,15.3,76-5.6c7.6-13.3,1.8-31.1-2.3-43.8C117.6,63.3,114.7,54.3,105.9,48.6Z"/>
+        <path fill="#cffafe" class="in-bottom" d="M102,67.1c-9.6-6.1-22-3.1-29.5,2-15.4,10.7-19.6,37.5-7.6,47.8s35.9,3.9,44.5-12.5C115.5,92.6,113.9,74.6,102,67.1Z"/>
+    </svg>
+
+    <!-- Back Button -->
+    <!-- You can change the href="#" to the actual link of the previous page, e.g., "index.html" -->
+    <a href="home.html" class="fixed top-6 left-6 z-50 bg-white/80 backdrop-blur-sm text-cyan-800 p-3 rounded-full shadow-lg hover:bg-white transition-all duration-300 transform hover:scale-110">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l-7 7 7 7" />
+        </svg>
+    </a>
+
+    <!-- Main Content -->
+    <main class="min-h-screen flex items-center justify-center p-4 sm:p-6 md:p-8">
+        <div class="w-full max-w-7xl bg-white/60 backdrop-blur-xl rounded-2xl shadow-2xl p-6 sm:p-8 text-center mt-12">
+            
+            <h1 class="text-3xl md:text-4xl font-extrabold text-slate-800 mb-8">
+                کدوم مبحث رو می‌خوای یاد بگیری؟
+            </h1>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                
+                <!-- Card 1: Stoichiometry -->
+                <div class="flip-card h-48"><div class="flip-card-inner shadow-lg rounded-2xl"><div class="flip-card-front bg-white/80 flex-col p-4"><h2 class="text-2xl font-bold text-cyan-800">استوکیومتری</h2><p class="text-slate-500 mt-2">محاسبات واکنش‌ها</p></div><div class="flip-card-back bg-cyan-600 flex-col p-4 space-y-4"><a href="#" class="w-full bg-white/90 hover:bg-white text-cyan-800 font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">درسنامه</a><a href="#" class="w-full bg-cyan-800 hover:bg-cyan-900 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">تست</a></div></div></div>
+                <!-- Card 2: Balancing -->
+                <div class="flip-card h-48"><div class="flip-card-inner shadow-lg rounded-2xl"><div class="flip-card-front bg-white/80 flex-col p-4"><h2 class="text-2xl font-bold text-cyan-800">موازنه</h2><p class="text-slate-500 mt-2">تعادل معادلات</p></div><div class="flip-card-back bg-cyan-600 flex-col p-4 space-y-4"><a href="darsnamemovaxene.html" class="w-full bg-white/90 hover:bg-white text-cyan-800 font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">درسنامه</a><a href="testmovaxene.html" class="w-full bg-cyan-800 hover:bg-cyan-900 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">تست</a></div></div></div>
+                <!-- Card 3: Acids and Bases -->
+                <div class="flip-card h-48"><div class="flip-card-inner shadow-lg rounded-2xl"><div class="flip-card-front bg-white/80 flex-col p-4"><h2 class="text-2xl font-bold text-cyan-800">اسید و باز</h2><p class="text-slate-500 mt-2">مفاهیم و pH</p></div><div class="flip-card-back bg-cyan-600 flex-col p-4 space-y-4"><a href="#" class="w-full bg-white/90 hover:bg-white text-cyan-800 font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">درسنامه</a><a href="#" class="w-full bg-cyan-800 hover:bg-cyan-900 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">تست</a></div></div></div>
+                <!-- Card 4: Organic Chemistry -->
+                <div class="flip-card h-48"><div class="flip-card-inner shadow-lg rounded-2xl"><div class="flip-card-front bg-white/80 flex-col p-4"><h2 class="text-2xl font-bold text-cyan-800">شیمی آلی</h2><p class="text-slate-500 mt-2">ترکیبات کربن</p></div><div class="flip-card-back bg-cyan-600 flex-col p-4 space-y-4"><a href="#" class="w-full bg-white/90 hover:bg-white text-cyan-800 font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">درسنامه</a><a href="#" class="w-full bg-cyan-800 hover:bg-cyan-900 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">تست</a></div></div></div>
+                <!-- Card 5: Thermodynamics -->
+                <div class="flip-card h-48"><div class="flip-card-inner shadow-lg rounded-2xl"><div class="flip-card-front bg-white/80 flex-col p-4"><h2 class="text-2xl font-bold text-cyan-800">ترمودینامیک</h2><p class="text-slate-500 mt-2">انرژی و گرما</p></div><div class="flip-card-back bg-cyan-600 flex-col p-4 space-y-4"><a href="#" class="w-full bg-white/90 hover:bg-white text-cyan-800 font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">درسنامه</a><a href="#" class="w-full bg-cyan-800 hover:bg-cyan-900 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">تست</a></div></div></div>
+                <!-- Card 6: Kinetics -->
+                <div class="flip-card h-48"><div class="flip-card-inner shadow-lg rounded-2xl"><div class="flip-card-front bg-white/80 flex-col p-4"><h2 class="text-2xl font-bold text-cyan-800">سینتیک</h2><p class="text-slate-500 mt-2">سرعت واکنش‌ها</p></div><div class="flip-card-back bg-cyan-600 flex-col p-4 space-y-4"><a href="#" class="w-full bg-white/90 hover:bg-white text-cyan-800 font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">درسنامه</a><a href="#" class="w-full bg-cyan-800 hover:bg-cyan-900 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">تست</a></div></div></div>
+                <!-- Card 7: Electrochemistry -->
+                <div class="flip-card h-48"><div class="flip-card-inner shadow-lg rounded-2xl"><div class="flip-card-front bg-white/80 flex-col p-4"><h2 class="text-2xl font-bold text-cyan-800">الکتروشیمی</h2><p class="text-slate-500 mt-2">پیل‌های گالوانی</p></div><div class="flip-card-back bg-cyan-600 flex-col p-4 space-y-4"><a href="#" class="w-full bg-white/90 hover:bg-white text-cyan-800 font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">درسنامه</a><a href="#" class="w-full bg-cyan-800 hover:bg-cyan-900 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">تست</a></div></div></div>
+                <!-- Card 8: Atomic Structure -->
+                <div class="flip-card h-48"><div class="flip-card-inner shadow-lg rounded-2xl"><div class="flip-card-front bg-white/80 flex-col p-4"><h2 class="text-2xl font-bold text-cyan-800">ساختار اتم</h2><p class="text-slate-500 mt-2">اوربیتال و آرایش</p></div><div class="flip-card-back bg-cyan-600 flex-col p-4 space-y-4"><a href="#" class="w-full bg-white/90 hover:bg-white text-cyan-800 font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">درسنامه</a><a href="#" class="w-full bg-cyan-800 hover:bg-cyan-900 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">تست</a></div></div></div>
+                <!-- Card 9: Chemical Bonds -->
+                <div class="flip-card h-48"><div class="flip-card-inner shadow-lg rounded-2xl"><div class="flip-card-front bg-white/80 flex-col p-4"><h2 class="text-2xl font-bold text-cyan-800">پیوند شیمیایی</h2><p class="text-slate-500 mt-2">کووالانسی و یونی</p></div><div class="flip-card-back bg-cyan-600 flex-col p-4 space-y-4"><a href="#" class="w-full bg-white/90 hover:bg-white text-cyan-800 font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">درسنامه</a><a href="#" class="w-full bg-cyan-800 hover:bg-cyan-900 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">تست</a></div></div></div>
+                <!-- Card 10: Solutions -->
+                <div class="flip-card h-48"><div class="flip-card-inner shadow-lg rounded-2xl"><div class="flip-card-front bg-white/80 flex-col p-4"><h2 class="text-2xl font-bold text-cyan-800">محلول‌ها</h2><p class="text-slate-500 mt-2">غلظت و انحلال</p></div><div class="flip-card-back bg-cyan-600 flex-col p-4 space-y-4"><a href="#" class="w-full bg-white/90 hover:bg-white text-cyan-800 font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">درسنامه</a><a href="#" class="w-full bg-cyan-800 hover:bg-cyan-900 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105">تست</a></div></div></div>
+
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
